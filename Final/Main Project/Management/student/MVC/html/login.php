@@ -1,51 +1,28 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
-    <link rel="stylesheet" href="../css/login.css">
     
+    <title>Login | AIUB Notes</title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
-
-
 <body>
 
-    
+    <div class="login-box">
+        <h2>Login</h2>
+        <p>AIUB Student Notes & Slides</p>
 
+        <form>
+            <input type="text" placeholder="Student ID" required>
+            <input type="password" placeholder="Password" required>
 
+            <button type="submit">Login</button>
+        </form>
 
-    <center>
-        <fieldset>
+        <p class="link">
+            Don’t have an account?
+            <a href="#">Register</a>
+        </p>
+    </div>
 
-            <legend>Welcome back, please login</legend>
-
-            <h2>Login</h2>
-
-            <table>
-                <tr>
-                    <td class="a">Email</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" name="email" placeholder="Enter your email"><br><br>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="b">Password</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="password" name="password" placeholder="Enter your password"><br><br>
-                    </td>
-                </tr>
-            </table>
-
-            <center>
-                <input type="submit" class="button" value="Login">
-                <a href="register.php" class="button">Register</a>
-            </center>
-
-        </fieldset>
-    </center>
 </body>
 </html>

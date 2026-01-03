@@ -1,51 +1,59 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-body{
-            background-color: white;
-            font-family: "Times New Roman", sans-serif;
-        }
+.login-box {
+    background-color: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+}
 
-        fieldset{
-            width: 400px;
-            margin-top: 80px;
-            padding: 20px;
-            border-radius: 5px;
-        }
+.login-box h2 {
+    margin-bottom: 5px;
+}
 
-        legend{
-            text-align: center;
-            font-size: 18px;
-            color: black;
-        }
+.login-box p {
+    font-size: 14px;
+    color: #666;
+}
 
-        h2{
-            text-align: center;
-            color: black;
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-        .a, .b{
-            font-size: 18px;
-            color: black;
-        }
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #0a3d62;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-        input[type="text"],
-        input[type="password"]{
-            width: 100%;
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+button:hover {
+    background-color: #07406a;
+}
 
-        .button{
-            background-color: black;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 5px;
-            text-decoration: none;
-        }
-   
+.link {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.link a {
+    color: #0a3d62;
+    text-decoration: none;
+}

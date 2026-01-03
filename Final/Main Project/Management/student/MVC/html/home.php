@@ -10,7 +10,7 @@
     <header class="hero">
         <h1>AIUB Student Notes & Slides</h1>
         <p>One simple platform for AIUB course materials</p>
-        <a href="#" class="btn">Get Started</a>
+        <a href="login.php" class="btn">Get Started</a>
     </header>
 
     <section class="content">
