@@ -3,7 +3,7 @@
 <head>
     
     <title>Teacher Dashboard | AIUB Notes</title>
-    <link rel="stylesheet" href="teacher-dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
 
