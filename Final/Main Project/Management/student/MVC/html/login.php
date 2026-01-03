@@ -20,7 +20,7 @@
 
         <p class="link">
             Don’t have an account?
-            <a href="#">Register</a>
+            <a href="register.php">Register</a>
         </p>
     </div>
 

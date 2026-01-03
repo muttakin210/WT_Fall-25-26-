@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Registration | AIUB Notes</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 
         <p class="link">
             Already have an account?
-            <a href="login.html">Login</a>
+            <a href="login.php">Login</a>
         </p>
     </div>
 
