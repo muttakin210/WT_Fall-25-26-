@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "Final_project";
+$dbname = "aiub_student_management";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
