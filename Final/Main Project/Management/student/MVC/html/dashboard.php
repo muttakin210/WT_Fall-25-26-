@@ -1,21 +1,30 @@
-<!DOCTYPE html>
+<?php
+session_start();
 
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../html/login.php");
+    exit();
+}
+
+// Get user's full name from session
+$full_name = $_SESSION['full_name'];
+?>
+<!DOCTYPE html>
+<html>
 <head>
-    
     <title>Student Dashboard | AIUB Notes</title>
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
 
-   
     <div class="navbar">
         <h2>AIUB Notes</h2>
-        <a href="#">Logout</a>
+        <a href="../php/logout.php">Logout</a>
     </div>
 
-    
     <div class="container">
-        <h1>Welcome, Student</h1>
+        <h1>Welcome, <?php echo htmlspecialchars($full_name); ?></h1>
         <p>Select what you want to access</p>
 
         <div class="cards">
