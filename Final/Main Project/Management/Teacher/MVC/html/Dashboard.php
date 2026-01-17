@@ -38,7 +38,7 @@ $teacher_name = $_SESSION['full_name'];
             <div class="card">
                 <h3>Upload Materials</h3>
                 <p>Upload notes and lecture slides.</p>
-                <a href="#">Upload</a>
+                <a href="upload_materials.php">Upload</a>
             </div>
 
             <div class="card">
