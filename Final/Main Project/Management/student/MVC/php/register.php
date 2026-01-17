@@ -1,17 +1,11 @@
 <?php
-include "../db/db.php"
-$conn = mysqli_connect($host, $user, $pass, $dbname);
-
-if (!$conn) {
-    die("Database connection failed");
-}
+include "../db/db.php";
 
 if (isset($_POST['register'])) {
 
-    $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
-    $student_id = mysqli_real_escape_string($conn, $_POST['student_id']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = $_POST['password'];
+    $full_name   = mysqli_real_escape_string($conn, $_POST['full_name']);
+    $email       = mysqli_real_escape_string($conn, $_POST['email']);
+    $password    = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
     
@@ -19,21 +13,27 @@ if (isset($_POST['register'])) {
         echo "Passwords do not match!";
         exit();
     }
+
+    // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $check = "SELECT * FROM students WHERE email='$email' OR student_id='$student_id'";
-    $result = mysqli_query($conn, $check);
 
-    if (mysqli_num_rows($result) > 0) {
-        echo "Email or Student ID already registered!";
-        exit();
-    }
-    $sql = "INSERT INTO students (full_name, student_id, email, password)
-            VALUES ('$full_name', '$student_id', '$email', '$hashed_password')";
+    
+    $sql = "INSERT INTO students (full_name, email, password)
+            VALUES ('$full_name', '$email', '$hashed_password')";
 
+    // Execute SQL
     if (mysqli_query($conn, $sql)) {
-        echo "Registration successful! <a href='login.php'>Login Now</a>";
+        
+        header("Location: ../html/login.php?success=1");
+        exit();
     } else {
-        echo "Error: Registration failed!";
+        
+        if (mysqli_errno($conn) == 1062) {
+            header("Location: ../html/register.php?error=email");
+            exit();
+        } else {
+            echo "Registration failed!";
+        }
     }
 }
 ?>
