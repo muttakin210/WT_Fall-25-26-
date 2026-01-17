@@ -11,12 +11,12 @@
         <h2>Student Registration</h2>
         <p>AIUB Student Notes & Slides</p>
 
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="text" placeholder="Student ID" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
+        <form method ="POST" action = ../php/register.php>
+            <input type="text" name = "full_name" placeholder="Full Name" required>
+            <input type="text" name = "student_id" placeholder="Student ID" required>
+            <input type="email" name = "email" placeholder="Email Address" required>
+            <input type="password" name = "password" placeholder="Password" required>
+            <input type="password" name = "confirm_password" placeholder="Confirm Password" required>
 
             <button type="submit">Register</button>
         </form>
