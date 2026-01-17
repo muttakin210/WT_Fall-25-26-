@@ -11,14 +11,19 @@
         <h2>Student Registration</h2>
         <p>AIUB Student Notes & Slides</p>
 
-        <form method ="POST" action = ../php/register.php>
-            <input type="text" name = "full_name" placeholder="Full Name" required>
-            <input type="text" name = "student_id" placeholder="Student ID" required>
-            <input type="email" name = "email" placeholder="Email Address" required>
-            <input type="password" name = "password" placeholder="Password" required>
-            <input type="password" name = "confirm_password" placeholder="Confirm Password" required>
+        <?php
+        if (isset($_GET['error']) && $_GET['error'] == 'email') {
+            echo "<p style='color:red; text-align:center;'>Email already exists</p>";
+        }
+        ?>
 
-            <button type="submit">Register</button>
+        <form method="POST" action="../php/register.php">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+            <button type="submit" name="register">Register</button>
         </form>
 
         <p class="link">
