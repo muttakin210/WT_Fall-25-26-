@@ -230,3 +230,32 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.no-notes h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.no-notes p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.btn-upload {
+    background: #667eea;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-upload:hover {
+    background: #5a6fd8;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
