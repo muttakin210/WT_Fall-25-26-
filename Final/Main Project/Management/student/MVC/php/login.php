@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    // 1️⃣ Check students table first
+    
     $sql_student = "SELECT * FROM students WHERE email='$email'";
     $result_student = mysqli_query($conn, $sql_student);
 
@@ -18,28 +18,43 @@ if (isset($_POST['login'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['full_name'] = $user['full_name'];
 
-            // Correct student dashboard path
+            
             header("Location: ../html/dashboard.php");
             exit();
         }
     }
 
-    // 2️⃣ Check teachers table
-    $sql_teacher = "SELECT * FROM teachers WHERE email='$email' AND password='$password'";
-    $result_teacher = mysqli_query($conn, $sql_teacher);
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (mysqli_num_rows($result_teacher) == 1) {
-        $teacher = mysqli_fetch_assoc($result_teacher);
-        $_SESSION['user_type'] = 'teacher';
-        $_SESSION['user_id'] = $teacher['id'];
-        $_SESSION['full_name'] = $teacher['full_name'];
+    $email = trim(mysqli_real_escape_string($conn, $_POST['email']));
+    $password = $_POST['password'];
 
-        // Correct teacher dashboard path from student/MVC/php/
-        header("Location: ../../../Teacher/MVC/html/dashboard.php");
-        exit();
+    // ADMIN LOGIN
+    $sql_admin = "SELECT * FROM admins WHERE email='$email'";
+    $result_admin = mysqli_query($conn, $sql_admin);
+
+    if (mysqli_num_rows($result_admin) === 1) {
+        $admin = mysqli_fetch_assoc($result_admin);
+
+        // NORMAL PASSWORD CHECK
+        if ($password === $admin['password']) {
+            $_SESSION['user_type'] = 'admin';
+            $_SESSION['admin_id'] = $admin['id'];
+            $_SESSION['full_name'] = $admin['full_name'];
+
+            header("Location: ../../../admin/MVC/html/dashboard.php");
+            exit();
+        }
     }
 
-    // 3️⃣ Login failed
+    header("Location: ../html/login.php?error=1");
+    exit();
+}
+
+    
+    
+
     header("Location: ../html/login.php?error=1");
     exit();
 }
