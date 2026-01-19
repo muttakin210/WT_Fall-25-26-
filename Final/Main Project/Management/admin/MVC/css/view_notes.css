@@ -96,3 +96,91 @@ body {
     cursor: pointer;
     font-size: 1rem;
 }
+
+.search-box button:hover {
+    background: #5a6fd8;
+}
+
+.clear-search {
+    color: #667eea;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+}
+
+.clear-search:hover {
+    background: #667eea;
+    color: white;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.note-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.note-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.note-header h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.upload-date {
+    color: #666;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.note-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.file-name {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.file-type {
+    background: #667eea;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
