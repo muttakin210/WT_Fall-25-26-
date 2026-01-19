@@ -25,4 +25,15 @@ if (mysqli_num_rows($admin_result) > 0) {
     $sql = "SELECT * FROM materials WHERE id = '$note_id' AND teacher_id = '$admin_id'";
 }
 
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_assoc($result);
+    
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="' . $row['file_name'] . '"');
+    header('Content-Length: ' . strlen($row['file_data']));
+    
+    echo $row['file_data'];
+} 
 ?>
