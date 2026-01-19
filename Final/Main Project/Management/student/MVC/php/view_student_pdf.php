@@ -22,11 +22,12 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     
     header('Content-Type: application/pdf');
-    
+    header('Content-Disposition: inline; filename="' . $row['file_name'] . '"');
+    header('Content-Length: ' . strlen($row['file_data']));
     
     echo $row['file_data'];
 } else {
     echo "<script>alert('File not found');</script>";
-    
+    echo "<script>window.location.href='../html/search_notes.php';</script>";
 }
 ?>
