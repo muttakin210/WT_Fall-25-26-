@@ -22,6 +22,9 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     
     header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="' . $row['file_name'] . '"');
+    header('Content-Length: ' . strlen($row['file_data']));
+    
     
 } else {
     echo "<script>alert('File not found');</script>";
