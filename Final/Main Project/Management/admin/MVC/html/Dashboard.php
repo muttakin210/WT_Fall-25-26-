@@ -27,7 +27,7 @@ $admin_name = $_SESSION['full_name'];
 
         <div class="cards">
             <div class="card">
-                <h3>My Courses</h3>
+                <h3>Courses</h3>
                 <p>View and manage assigned courses.</p>
                 <a href="#">Open</a>
             </div>
@@ -36,6 +36,12 @@ $admin_name = $_SESSION['full_name'];
                 <h3>Upload Materials</h3>
                 <p>Upload notes and lecture slides.</p>
                 <a href="upload_materials.php">Upload</a>
+            </div>
+
+            <div class="card">
+                <h3>Find Your Course Notes</h3>
+                <p>View and manage uploaded materials.</p>
+                <a href="view_notes.php">View Notes</a>
             </div>
 
             <div class="card">
