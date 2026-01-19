@@ -18,6 +18,15 @@ if (isset($_POST['upload'])) {
     $fileType = $_FILES['file']['type'];
     $fileTmp  = $_FILES['file']['tmp_name'];
 
+    /* Allow only PDF */
+    if ($fileType != "application/pdf") {
+        echo "<script>alert('Only PDF files are allowed');</script>";
+        exit();
+    }
+
+    /* Read file data */
+    $fileData = addslashes(file_get_contents($fileTmp));
+
     
 }
 ?>
