@@ -95,7 +95,13 @@ if (!$result) {
                     </div>
                 <?php endwhile; ?>
             <?php else: ?>
-                
+                <div class="no-notes">
+                    <h3> No notes found</h3
+                    <p><?php echo $search ? "No notes match your search criteria. Try different keywords." : "No course materials have been uploaded yet."; ?></p>
+                    <?php if ($search): ?>
+                        <a href="search_notes.php" class="btn-clear">Show All Notes</a>
+                    <?php endif; ?>
+                </div>
             <?php endif; ?>
         </div>
     </div>
