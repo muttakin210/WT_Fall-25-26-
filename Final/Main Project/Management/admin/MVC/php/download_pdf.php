@@ -35,5 +35,8 @@ if (mysqli_num_rows($result) == 1) {
     header('Content-Length: ' . strlen($row['file_data']));
     
     echo $row['file_data'];
-} 
+} else {
+    echo "<script>alert('File not found or access denied');</script>";
+    echo "<script>window.location.href='../html/view_notes.php';</script>";
+}
 ?>
