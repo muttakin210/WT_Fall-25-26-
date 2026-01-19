@@ -161,3 +161,39 @@ body {
     line-height: 1.6;
 }
 
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.file-name {
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.instructor {
+    color: #74b9ff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.note-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.note-actions a {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    text-align: center;
+    flex: 1;
+    font-weight: 600;
+}
