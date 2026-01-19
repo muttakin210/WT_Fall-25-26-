@@ -32,6 +32,11 @@ if (isset($_POST['upload'])) {
             VALUES 
             ('$teacher_id', '$title', '$description', '$fileName', '$fileType', '$fileData')";
 
-    
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('PDF uploaded successfully!');</script>";
+        echo "<script>window.location.href='../teacher/upload_materials.php';</script>";
+    } else {
+        echo "Upload failed!";
+    }
 }
 ?>
