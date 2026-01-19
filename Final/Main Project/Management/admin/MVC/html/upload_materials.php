@@ -7,7 +7,7 @@
 <body>
 
 <div class="navbar">
-    <h2>AIUB Notes – Teacher</h2>
+    <h2>AIUB Notes – Admin</h2>
     <a href="../php/logout.php">Logout</a>
 </div>
 
