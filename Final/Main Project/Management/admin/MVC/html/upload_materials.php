@@ -24,7 +24,8 @@
             <label for="description">Description</label>
             <textarea name="description" id="description" placeholder="Write a short description" required></textarea>
 
-            
+            <label for="file">Select File</label>
+            <input type="file" name="file" id="file" required>
 
             <button type="submit" name="upload">Upload</button>
         </form>
