@@ -25,5 +25,15 @@ if (mysqli_num_rows($admin_result) > 0) {
     $sql = "DELETE FROM materials WHERE id = '$note_id' AND teacher_id = '$admin_id'";
 }
 
+if (mysqli_query($conn, $sql)) {
+    if (mysqli_affected_rows($conn) > 0) {
+        echo "<script>alert('Note deleted successfully!');</script>";
+    } else {
+        echo "<script>alert('Note not found or access denied!');</script>";
+    }
+} else {
+    echo "<script>alert('Error deleting note!');</script>";
+}
+
 
 ?>
