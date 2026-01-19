@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// Check if user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../html/login.php");
     exit();
 }
 
-// Get user's full name from session
+
 $full_name = $_SESSION['full_name'];
 ?>
 <!DOCTYPE html>
@@ -29,9 +29,9 @@ $full_name = $_SESSION['full_name'];
 
         <div class="cards">
             <div class="card">
-                <h3>Course Notes</h3>
-                <p>View and download notes.</p>
-                <a href="#">Open</a>
+                <h3>Find Your Course Notes</h3>
+                <p>Search and download course materials.</p>
+                <a href="search_notes.php">Search Notes</a>
             </div>
 
             <div class="card">
