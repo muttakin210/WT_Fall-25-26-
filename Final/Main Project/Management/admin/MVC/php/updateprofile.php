@@ -3,7 +3,10 @@ session_start();
 include "../db/db.php";
 
 /* Security check */
-
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'teacher') {
+    header("Location: ../../../Teacher/MVC/html/teacher_login.php");
+    exit();
+}
 
 if (isset($_POST['update'])) {
 
