@@ -41,9 +41,15 @@ $full_name = $_SESSION['full_name'];
             </div>
 
             <div class="card">
-                <h3>Upload</h3>
-                <p>Share your notes with others.</p>
-                <a href="#">Upload</a>
+                <h3>Submit Assignment</h3>
+                <p>Upload your assignments for review.</p>
+                <a href="submit_assignment.php">Submit</a>
+            </div>
+
+            <div class="card">
+                <h3>Profile</h3>
+                <p>Update your profile information.</p>
+                <a href="update_profile.php">Edit Profile</a>
             </div>
         </div>
     </div>

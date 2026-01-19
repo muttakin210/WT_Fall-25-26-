@@ -46,8 +46,8 @@ $admin_name = $_SESSION['full_name'];
 
             <div class="card">
                 <h3>Review Submissions</h3>
-                <p>Check student-uploaded notes.</p>
-                <a href="#">Review</a>
+                <p>Check student-uploaded assignments.</p>
+                <a href="review_submissions.php">Review</a>
             </div>
 
             <div class="card">
