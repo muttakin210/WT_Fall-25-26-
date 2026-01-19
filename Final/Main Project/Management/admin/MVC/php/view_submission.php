@@ -12,6 +12,10 @@ if (!isset($_GET['id'])) {
     exit();
 }
 
+$submission_id = mysqli_real_escape_string($conn, $_GET['id']);
+
+$sql = "SELECT * FROM student_submissions WHERE id = '$submission_id'";
+$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
