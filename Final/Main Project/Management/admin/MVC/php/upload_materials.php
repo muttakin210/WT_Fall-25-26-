@@ -27,6 +27,11 @@ if (isset($_POST['upload'])) {
     /* Read file data */
     $fileData = addslashes(file_get_contents($fileTmp));
 
+    $sql = "INSERT INTO materials 
+            (teacher_id, title, description, file_name, file_type, file_data)
+            VALUES 
+            ('$teacher_id', '$title', '$description', '$fileName', '$fileType', '$fileData')";
+
     
 }
 ?>
