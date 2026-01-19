@@ -72,6 +72,32 @@ if (!$result) {
             </form>
         </div>
 
-        
+        <!-- Notes Grid -->
+        <div class="notes-grid">
+            <?php if ($result && mysqli_num_rows($result) > 0): ?>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <div class="note-card">
+                        <div class="note-header">
+                            <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+                            <span class="upload-date"><?php echo date('M j, Y', strtotime($row['uploaded_at'])); ?></span>
+                        </div>
+                        <div class="note-content">
+                            <p><?php echo htmlspecialchars($row['description']); ?></p>
+                            <div class="file-info">
+                                <span class="file-name"> <?php echo htmlspecialchars($row['file_name']); ?></span>
+                                <span class="instructor"> <?php echo htmlspecialchars($row['admin_name'] ?? 'Unknown'); ?></span>
+                            </div>
+                        </div>
+                        <div class="note-actions">
+                            <a href="../php/download_student_pdf.php?id=<?php echo $row['id']; ?>" class="btn-download"> Download</a>
+                            <a href="../php/view_student_pdf.php?id=<?php echo $row['id']; ?>" class="btn-view" target="_blank"> View</a>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                
+            <?php endif; ?>
+        </div>
+    </div>
 </body>
 </html>
