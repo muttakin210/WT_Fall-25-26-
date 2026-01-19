@@ -1,6 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
+
+// Include auto-login check
+include "../../../student/MVC/php/check_auto_login.php";
+
+// Check if user is logged in or can be auto-logged in
+if (!checkAutoLogin() || $_SESSION['user_type'] != 'admin') {
     header("Location: ../../../student/MVC/html/login.php");
     exit();
 }

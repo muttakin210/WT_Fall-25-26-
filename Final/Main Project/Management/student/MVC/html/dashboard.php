@@ -1,13 +1,16 @@
 <?php
 session_start();
 
+// Include auto-login check
+include "../php/check_auto_login.php";
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../html/login.php");
+// Check if user is logged in or can be auto-logged in
+if (!checkAutoLogin()) {
+    header("Location: login.php");
     exit();
 }
 
-
+// Get user's full name from session
 $full_name = $_SESSION['full_name'];
 ?>
 <!DOCTYPE html>

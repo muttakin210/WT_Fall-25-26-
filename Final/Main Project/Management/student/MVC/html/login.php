@@ -21,8 +21,13 @@
         ?>
 
         <form method="POST" action="../php/login.php">
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="email" name="email" placeholder="Email Address" value="<?php echo isset($_COOKIE['remember_email']) ? htmlspecialchars($_COOKIE['remember_email']) : ''; ?>" required>
+            <input type="password" name="password" placeholder="Password" value="<?php echo isset($_COOKIE['remember_password']) ? htmlspecialchars($_COOKIE['remember_password']) : ''; ?>" required>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember" <?php echo isset($_COOKIE['remember_email']) ? 'checked' : ''; ?>>
+                <label for="remember">Remember Me</label>
+            </div>
 
             <button type="submit" name="login">Login</button>
         </form>
