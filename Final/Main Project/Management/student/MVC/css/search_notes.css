@@ -197,3 +197,37 @@ body {
     flex: 1;
     font-weight: 600;
 }
+
+.btn-download {
+    background: #00b894;
+    color: white;
+}
+
+.btn-download:hover {
+    background: #00a085;
+}
+
+.btn-view {
+    background: #74b9ff;
+    color: white;
+}
+
+.btn-view:hover {
+    background: #0984e3;
+}
+
+.no-notes {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.no-notes h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
