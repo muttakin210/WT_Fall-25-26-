@@ -12,4 +12,11 @@ if (!isset($_GET['id'])) {
     exit();
 }
 
+$note_id = mysqli_real_escape_string($conn, $_GET['id']);
+$admin_id = $_SESSION['admin_id'];
+
+// Check if admin_id or teacher_id column exists and fetch accordingly
+$check_admin_column = "SHOW COLUMNS FROM materials LIKE 'admin_id'";
+$admin_result = mysqli_query($conn, $check_admin_column);
+
 ?>
