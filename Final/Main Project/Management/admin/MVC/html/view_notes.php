@@ -76,7 +76,13 @@ $result = mysqli_query($conn, $sql);
                         </div>
                     </div>
                 <?php endwhile; ?>
-            
+            <?php else: ?>
+                <div class="no-notes">
+                    <h3>No notes found</h3>
+                    <p><?php echo $search ? "No notes match your search criteria." : "You haven't uploaded any notes yet."; ?></p>
+                    <a href="upload_materials.php" class="btn-upload">Upload Your First Note</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </body>
