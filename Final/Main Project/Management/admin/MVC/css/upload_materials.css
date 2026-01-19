@@ -87,3 +87,18 @@ body {
     height: 100px;
 }
 
+.upload-box button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #2f3640;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-box button:hover {
+    background-color: #353b48;
+}
