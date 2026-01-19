@@ -3,24 +3,24 @@ session_start();
 include "../db/db.php";
 
 /* Security check */
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'teacher') {
-    header("Location: ../../../Teacher/MVC/html/teacher_login.php");
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
+    header("Location: ../../../student/MVC/html/login.php");
     exit();
 }
 
 if (isset($_POST['update'])) {
 
-    $teacher_id = $_SESSION['teacher_id'];
+    $admin_id = $_SESSION['admin_id'];
 
     $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
     $email     = mysqli_real_escape_string($conn, $_POST['email']);
     $password  = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "UPDATE teacher 
+    $sql = "UPDATE admins 
             SET full_name='$full_name',
                 email='$email',
                 password='$password'
-            WHERE id='$teacher_id'";
+            WHERE id='$admin_id'";
 
     if (mysqli_query($conn, $sql)) {
 
@@ -28,7 +28,7 @@ if (isset($_POST['update'])) {
         $_SESSION['full_name'] = $full_name;
 
         echo "<script>alert('Profile updated successfully');</script>";
-        echo "<script>window.location.href='dashboard.php';</script>";
+        echo "<script>window.location.href='../html/Dashboard.php';</script>";
 
     } else {
         echo "Profile update failed!";
