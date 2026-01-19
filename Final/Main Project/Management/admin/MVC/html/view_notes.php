@@ -62,6 +62,22 @@ $result = mysqli_query($conn, $sql);
                             <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                             <span class="upload-date"><?php echo date('M j, Y', strtotime($row['uploaded_at'])); ?></span>
                         </div>
-                        
+                        <div class="note-content">
+                            <p><?php echo htmlspecialchars($row['description']); ?></p>
+                            <div class="file-info">
+                                <span class="file-name">📄 <?php echo htmlspecialchars($row['file_name']); ?></span>
+                                <span class="file-type"><?php echo strtoupper($row['file_type']); ?></span>
+                            </div>
+                        </div>
+                        <div class="note-actions">
+                            <a href="../php/download_pdf.php?id=<?php echo $row['id']; ?>" class="btn-download">Download</a>
+                            <a href="../php/view_pdf.php?id=<?php echo $row['id']; ?>" class="btn-view" target="_blank">View</a>
+                            <a href="../php/delete_note.php?id=<?php echo $row['id']; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this note?')">Delete</a>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            
+        </div>
+    </div>
 </body>
 </html>
