@@ -259,3 +259,19 @@ body {
         padding: 0 1rem;
     }
     
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-box form {
+        flex-direction: column;
+    }
+    
+    .note-actions {
+        flex-direction: column;
+    }
+    
+    .note-actions a {
+        flex: none;
+    }
+}
