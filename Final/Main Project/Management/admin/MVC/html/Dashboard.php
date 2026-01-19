@@ -5,7 +5,9 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'teacher') {
     exit();
 }
 
-
+$teacher_id = $_SESSION['teacher_id']; 
+$teacher_name = $_SESSION['full_name'];
+?>
 
 <!DOCTYPE html>
 <html>
