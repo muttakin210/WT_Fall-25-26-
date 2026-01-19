@@ -53,6 +53,15 @@ $result = mysqli_query($conn, $sql);
             </form>
         </div>
 
-        
+        <!-- Notes Grid -->
+        <div class="notes-grid">
+            <?php if (mysqli_num_rows($result) > 0): ?>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <div class="note-card">
+                        <div class="note-header">
+                            <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+                            <span class="upload-date"><?php echo date('M j, Y', strtotime($row['uploaded_at'])); ?></span>
+                        </div>
+                        
 </body>
 </html>
