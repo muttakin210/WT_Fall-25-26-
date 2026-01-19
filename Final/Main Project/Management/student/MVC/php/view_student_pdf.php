@@ -18,4 +18,15 @@ $note_id = mysqli_real_escape_string($conn, $_GET['id']);
 $sql = "SELECT * FROM materials WHERE id = '$note_id'";
 $result = mysqli_query($conn, $sql);
 
+if (mysqli_num_rows($result) == 1) {
+    $row = mysqli_fetch_assoc($result);
+    
+    header('Content-Type: application/pdf');
+    
+    
+    echo $row['file_data'];
+} else {
+    echo "<script>alert('File not found');</script>";
+    
+}
 ?>
