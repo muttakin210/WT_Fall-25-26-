@@ -231,3 +231,22 @@ body {
     font-size: 1.5rem;
 }
 
+.no-notes p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-clear {
+    background: #74b9ff;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.btn-clear:hover {
+    background: #0984e3;
+}
