@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Upload Materials | AIUB Notes</title>
+    <link rel="stylesheet" href="../css/upload_materials.css">
+</head>
 <body>
 
 <div class="navbar">
