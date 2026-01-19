@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     $remember = isset($_POST['remember']);
 
-    // 1️⃣ Check students table first
+    // Check students table first
     $sql_student = "SELECT * FROM students WHERE email='$email'";
     $result_student = mysqli_query($conn, $sql_student);
 
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
         }
     }
 
-    // 2️⃣ Check admins table
+    //  Check admins table
     $sql_admin = "SELECT * FROM admins WHERE email='$email'";
     $result_admin = mysqli_query($conn, $sql_admin);
 
@@ -65,7 +65,7 @@ if (isset($_POST['login'])) {
         }
     }
 
-    // 3️⃣ Login failed
+    // Login failed
     header("Location: ../html/login.php?error=1");
     exit();
 }
