@@ -14,13 +14,7 @@ if (!isset($_SESSION['teacher_id'])) {
 
 $teacher_id = $_SESSION['teacher_id'];
 
-/* Fetch teacher info safely */
-$stmt = $conn->prepare("SELECT * FROM teachers WHERE id = ?");
-$stmt->bind_param("i", $teacher_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
-?>
+
 
 <!DOCTYPE html>
 <html>
