@@ -2,21 +2,21 @@
 session_start();
 include "../db/db.php";
 
-if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'teacher') {
-    header("Location: ../../../Teacher/MVC/html/teacher_login.php");
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'admin') {
+    header("Location: ../../../student/MVC/html/login.php");
     exit();
 }
 
-if (!isset($_SESSION['teacher_id'])) {
-    header("Location: ../../../Teacher/MVC/html/teacher_login.php");
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: ../../../student/MVC/html/login.php");
     exit();
 }
 
-$teacher_id = $_SESSION['teacher_id'];
+$admin_id = $_SESSION['admin_id'];
 
-/* Fetch teacher info safely */
-$stmt = $conn->prepare("SELECT * FROM teachers WHERE id = ?");
-$stmt->bind_param("i", $teacher_id);
+/* Fetch admin info safely */
+$stmt = $conn->prepare("SELECT * FROM admins WHERE id = ?");
+$stmt->bind_param("i", $admin_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
@@ -25,19 +25,19 @@ $row = $result->fetch_assoc();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Update Profile | Teacher</title>
+    <title>Update Profile | Admin</title>
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
 <div class="navbar">
-    <h2>AIUB Notes – Teacher</h2>
+    <h2>AIUB Notes – Admin</h2>
     <a href="../php/logout.php">Logout</a>
 </div>
 
 <div class="container">
     <h1>Update Profile</h1>
 
-    <form action="updateprofile_action.php" method="POST">
+    <form action="../php/updateprofile.php" method="POST">
         <label>Full Name</label>
         <input type="text" name="full_name" value="<?php echo htmlspecialchars($row['full_name']); ?>" required>
 
